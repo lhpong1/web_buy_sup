@@ -1,0 +1,22 @@
+<% for(var i = 0; i < products.length; i++){ %>
+<tr>
+    <td><%= i + 1 %></td>
+    <td> <img src="<%= products[i].img %>" alt="" width="40" height="50"> </td>
+    <td><%= products[i].productname %></td>
+    <td><%= products[i].price %></td>
+    <td><%= products[i].thuonghieu %></td>
+    <td><%= products[i].khoiluong %></td>
+    <td><%= products[i].status %></td>
+    <td><%= products[i].huongvi %></td>
+    <td><%= products[i].soluong %></td>
+
+    <td>
+        <a href="/update-product?id=<%= products[i]._id%>" class="btn border-shadow update">
+            <span class="text gradient"><i class="fa-solid fa-pencil"></i></span>
+        </a>
+        <a class="btn border-shadow delete" data-id=<%= products[i]._id%>>
+            <span class="text gradient"><i class="fa-solid fa-x"></i></span>
+        </a>
+    </td>
+</tr>
+<% } %>

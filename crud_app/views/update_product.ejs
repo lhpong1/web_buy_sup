@@ -1,0 +1,105 @@
+<!-- include header -->
+<%-include('include/_header')%>
+<!-- /include header -->
+
+<!-- Main Site -->
+<main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+            <div class="filter">
+                <a href="/"><i class="fas fa-angle-double-left"></i>All Products</a>
+            </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">Update Product</h2>
+            <span class="text-light">Use the below form to update a product</span>
+        </div>
+
+        <!-- add product form -->
+<!-- form handling -->
+<form method="POST" id="update_product">
+    <div class="new_product">
+        <div class="form-group">
+            <label for="productname" class="text-light">Tên sản phẩm</label>
+            <input type="hidden" name="id" value="<%= product._id %>">
+            <input type="text" name="productname" value="<%= product.productname %>" placeholder="Tên sản phẩm">
+        </div>
+        <div class="form-group">
+            <label for="price" class="text-light">Giá</label>
+            <input type="number" name="price" value="<%= product.price %>" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="thuonghieu" class="text-light">Thương hiệu</label>
+            <input type="text" name="thuonghieu" value="<%= product.thuonghieu %>" placeholder="thuonghieu">
+        </div>
+        <div class="form-group">
+            <label for="khoiluong" class="text-light">Khối lượng</label>
+                <div class="radio inline">
+                    <input type="radio" id="radio-4" name="khoiluong" value="0,5kg"<%= product.khoiluong == '0,5kg' ? 'checked' : '' %>>
+                    <label for="radio-4" class="radio-label">0,5kg</label>
+                </div>
+                <div class="radio inline">
+                    <input type="radio" id="radio-5" name="khoiluong" value="1kg"<%= product.khoiluong == '1kg' ? 'checked' : '' %>>
+                    <label for="radio-5" class="radio-label">1kg</label>
+                </div>
+        </div>
+        <div class="form-group">
+            <label for="status" class="text-light">Trạng thái</label>
+            <div class="radio inline">
+                <input type="radio" id="radio-2" name="status" value="Dang Kinh Doanh"<%= product.status == 'Dang kinh doanh' ? 'checked' : "" %>>
+                <label for="radio-2" class="radio-label">Đamg kinh doanh</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-2" name="status" value="Sale"<%= product.status == 'Het hang' ? 'checked' : "" %>>
+                <label for="radio-3" class="radio-label">Hết hàng</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="huongvi" class="text-light">Hương vị</label>
+            <div class="radio inline">
+                <input type="radio" id="radio-6" name="huongvi" value="Cookies & cream"<%= product.huongvi == 'Cookies & cream' ? 'checked' : "" %>>
+                <label for="radio-6" class="radio-label">Cookies & cream</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-7" name="huongvi" value="Strawberry"<%= product.huongvi == 'CStrawberry' ? 'checked' : "" %>>
+                <label for="radio-7" class="radio-label">Strawberry</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-8" name="huongvi" value="Cafe mocha"<%= product.huongvi == 'Cafe mocha' ? 'checked' : "" %>>
+                <label for="radio-8" class="radio-label">Cafe mocha</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-9" name="huongvi" value="Chocolate fudge"<%= product.huongvi == 'Chocolate fudge' ? 'checked' : "" %>>
+                <label for="radio-9" class="radio-label">Chocolate fudge</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-10" name="huongvi" value="Frozen banana"<%= product.huongvi == 'Frozen banana' ? 'checked' : "" %>>
+                <label for="radio-10" class="radio-label">Frozen banana</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="img" class="text-light">Hình ảnh minh họa</label>
+            <input type="text" name="img" value="<%= product.img %>" placeholder="https://">
+        </div>
+        <div class="form-group">
+            <label for="soluong" class="text-light">Số lượng</label>
+            <input type="number" name="soluong" value="<%= product.soluong %>">
+        </div>
+        
+        
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Save</button>
+        </div>
+    
+    </div>
+</form>
+        
+    </div>
+</main>
+<!-- /Main Site -->
+
+
+<!-- include footer -->
+<%-include('include/_footer')%>
+<!-- /include footer -->
